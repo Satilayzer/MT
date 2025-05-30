@@ -1,6 +1,5 @@
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,15 +9,14 @@ public class Main {
         int consumers = 4;
 
         Manager manager = new Manager(bufferSize);
-        AtomicInteger finishedThreads = new AtomicInteger(0); // счётчик завершённых потоков
-        int totalThreads = producers + consumers;
+        List<Thread> threads = new ArrayList<>();
 
         for (int i = 0; i < producers; i++) {
             Thread t = new Thread(() -> {
                 Producer producer = new Producer(manager, totalItems / producers);
                 producer.run();
-                finishedThreads.incrementAndGet();
             }, "Producer-" + i);
+            threads.add(t);
             t.start();
         }
 
@@ -26,15 +24,14 @@ public class Main {
             Thread t = new Thread(() -> {
                 Consumer consumer = new Consumer(manager, totalItems / consumers);
                 consumer.run();
-                finishedThreads.incrementAndGet();
             }, "Consumer-" + i);
+            threads.add(t);
             t.start();
         }
 
-        // Ожидаем завершения всех потоков
-        while (finishedThreads.get() < totalThreads) {
+        for (Thread t : threads) {
             try {
-                Thread.sleep(100); // опрашиваем каждые 100мс
+                t.join();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

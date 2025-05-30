@@ -17,7 +17,6 @@ public class SequenceThread extends Thread {
         this.canStop = true;
     }
 
-
     @Override //`coz i can
     public void run() {
         int current = 0;

@@ -3,7 +3,7 @@
 object lockObj = new();
 var completedThreads = 0;
 
-const int size = 100_000_000_0;
+const int size = 10_000_000;
 const int maxValue = 15000;
 const int threadCount = 5;
 const int rangeSize = size / threadCount;

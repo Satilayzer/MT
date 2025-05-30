@@ -31,9 +31,6 @@ for (var i = 0; i < consumerCount; i++)
 	allThreads.Add(thread);
 }
 
-Console.WriteLine("Очікуємо завершення потоків... Натисніть будь-яку клавішу після завершення.");
-Console.ReadKey();
-
 return;
 
 void Producer(int id, int items)
