@@ -6,7 +6,7 @@ internal class Waiter
 
     public Waiter()
     {
-        permission = new SemaphoreSlim(4);
+        permission = new SemaphoreSlim(4, 4);
     }
 
     public void RequestPermission()

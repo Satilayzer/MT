@@ -10,7 +10,7 @@ internal class Philosopher
 
     public Philosopher(int id, Table table, Waiter waiter)
     {
-        this.philosopherId = philosopherId;
+        this.philosopherId = id;
         this.table = table;
         this.waiter = waiter;
         rightFork = id;
@@ -23,14 +23,14 @@ internal class Philosopher
     {
         for (int i = 0; i < 10; i++)
         {
-            Console.WriteLine($"Philosopher {philosopherId} is thinking {i + 1} times");
+            Console.WriteLine($"Philosopher {philosopherId} is thinking ({i + 1})");
 
             waiter.RequestPermission();
 
             table.TakeFork(rightFork);
             table.TakeFork(leftFork);
 
-            Console.WriteLine($"Philosopher {philosopherId} is eating {i + 1} times");
+            Console.WriteLine($"Philosopher {philosopherId} is eating ({i + 1})");
 
             table.ReleaseFork(rightFork);
             table.ReleaseFork(leftFork);

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MTLab4_Waiter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43d402788df0888491c8d1413b1fc5d1277d72d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afb2cd087a63e7dc43ad09610b3b14a410627b6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MTLab4_Waiter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MTLab4_Waiter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

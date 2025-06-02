@@ -8,7 +8,7 @@ internal class Table
     {
         for (int i = 0; i < 5; i++)
         {
-            forks[i] = new SemaphoreSlim(1);
+            forks[i] = new SemaphoreSlim(1, 1);
         }
     }
 
