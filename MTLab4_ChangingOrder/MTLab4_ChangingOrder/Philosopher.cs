@@ -9,7 +9,7 @@ internal class Philosopher
 
     public Philosopher(int id, Table table)
     {
-        this.philosopherId = philosopherId;
+        this.philosopherId = id;
         this.table = table;
 
         if (id == 0)
@@ -35,7 +35,6 @@ internal class Philosopher
 
             table.TakeFork(rightFork);
             table.TakeFork(leftFork);
-
 
             Console.WriteLine($"Philosopher {philosopherId} is eating {i + 1} times");
 
